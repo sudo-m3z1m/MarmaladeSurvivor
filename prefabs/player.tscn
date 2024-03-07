@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://qjapx530ut32"]
+
+[ext_resource type="PackedScene" uid="uid://d3mb57w65turn" path="res://prefabs/marmelade_segment.tscn" id="1_3id8p"]
+[ext_resource type="PackedScene" uid="uid://f13bdx3k4gmk" path="res://prefabs/playable_segment.tscn" id="2_ijetc"]
+
+[node name="Player" type="Node2D"]
+
+[node name="MarmeladeSegment2" parent="." instance=ExtResource("1_3id8p")]
+position = Vector2(-65, 0)
+
+[node name="PinJoint2D2" parent="MarmeladeSegment2" index="2"]
+node_a = NodePath("../../PlayebleSegment")
+node_b = NodePath("..")
+
+[node name="PlayebleSegment" parent="." instance=ExtResource("2_ijetc")]
+max_contacts_reported = 0
+contact_monitor = false
+
+[node name="PinJoint2D2" parent="PlayebleSegment" index="2"]
+node_a = NodePath("..")
+node_b = NodePath("../../MarmeladeSegment")
+
+[node name="MarmeladeSegment" parent="." instance=ExtResource("1_3id8p")]
+position = Vector2(65, 0)
+
+[connection signal="body_entered" from="PlayebleSegment" to="PlayebleSegment" method="wall_entered"]
+
+[editable path="MarmeladeSegment2"]
+[editable path="PlayebleSegment"]
