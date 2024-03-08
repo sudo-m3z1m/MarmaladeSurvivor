@@ -7,11 +7,12 @@
 offsets = PackedFloat32Array(0, 0.513333, 1)
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1)
 
-[node name="PlayableSegment" instance=ExtResource("1_1khgk")]
+[node name="PlayableSegment" node_paths=PackedStringArray("joint_segments") instance=ExtResource("1_1khgk")]
 script = ExtResource("2_q53dr")
 max_point_range = Vector2(300, 300)
 default_force = 350.0
 rotate_force = 100000.0
+joint_segments = []
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 drag_horizontal_enabled = true

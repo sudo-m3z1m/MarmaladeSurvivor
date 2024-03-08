@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3mb57w65turn"]
+[gd_scene load_steps=6 format=3 uid="uid://d3mb57w65turn"]
 
 [ext_resource type="Script" path="res://prefabs/marmelade_segment.gd" id="1_dwth4"]
 [ext_resource type="Texture2D" uid="uid://djajhv1xyo0ym" path="res://icon.svg" id="1_gi6m4"]
+[ext_resource type="Script" path="res://prefabs/SegmentsStates/segment_state_machine.gd" id="3_f17m7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_krc6k"]
 animations = [{
@@ -56,3 +57,9 @@ target_position = Vector2(0, 70)
 collision_mask = 2
 
 [node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_f17m7")
+
+[node name="RaycastTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="RaycastTimer" to="." method="raycast_timer_timeout"]

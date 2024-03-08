@@ -12,9 +12,10 @@ position = Vector2(-65, 0)
 node_a = NodePath("../../PlayebleSegment")
 node_b = NodePath("..")
 
-[node name="PlayebleSegment" parent="." instance=ExtResource("2_ijetc")]
+[node name="PlayebleSegment" parent="." node_paths=PackedStringArray("joint_segments") instance=ExtResource("2_ijetc")]
 max_contacts_reported = 0
 contact_monitor = false
+joint_segments = [NodePath("../MarmeladeSegment2"), NodePath("."), NodePath("../MarmeladeSegment")]
 
 [node name="PinJoint2D2" parent="PlayebleSegment" index="2"]
 node_a = NodePath("..")
