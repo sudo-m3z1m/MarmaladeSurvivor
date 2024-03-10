@@ -7,12 +7,14 @@ func _enter_state() -> void:
 	target_sprite.animation = animation
 	target.freeze = false
 	raycasts_array = target.raycasts_array
-	
+
+	target.audio_player.play()
 	target.set_raycasts_enabled(false)
 	target.raycast_timer.start()
 
 func _update(delta: float) -> void:
 	for raycast in raycasts_array:
 		if raycast.is_colliding():
-			target.rotation = raycast.get_collision_normal().angle() - 90
+			target.rotation = raycast.get_collision_normal().angle() - PI/2
 			target.segments_state_machine.change_state(target.segments_state_machine.STATES.IDLE)
+			target.global_position = raycast.get_collision_point()

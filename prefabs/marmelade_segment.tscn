@@ -1,40 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3mb57w65turn"]
+[gd_scene load_steps=13 format=3 uid="uid://d3mb57w65turn"]
 
 [ext_resource type="Script" path="res://prefabs/marmelade_segment.gd" id="1_dwth4"]
-[ext_resource type="Texture2D" uid="uid://djajhv1xyo0ym" path="res://icon.svg" id="1_gi6m4"]
+[ext_resource type="AudioStream" uid="uid://dxkvgmrtqxjhe" path="res://audio/cartoon-splat-6086.mp3" id="3_7s8gy"]
 [ext_resource type="Script" path="res://prefabs/SegmentsStates/segment_state_machine.gd" id="3_f17m7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_krc6k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_gi6m4")
-}],
-"loop": true,
-"name": &"Falling",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_gi6m4")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
+[ext_resource type="AudioStream" uid="uid://bgxvemepjqwup" path="res://audio/slimejump-6913.mp3" id="4_dsmfp"]
+[ext_resource type="AudioStream" uid="uid://cn1ecmau3n0xt" path="res://audio/slimejump.mp3" id="5_a2gf7"]
+[ext_resource type="AudioStream" uid="uid://dufohiw86x6uo" path="res://audio/slime_five.wav" id="6_pljxd"]
+[ext_resource type="AudioStream" uid="uid://dv0sxgyu0ad10" path="res://audio/slime_four.wav" id="7_5woqi"]
+[ext_resource type="AudioStream" uid="uid://51nw7musnh5n" path="res://audio/slime_one.wav" id="8_ftle0"]
+[ext_resource type="AudioStream" uid="uid://sadrigjmyviy" path="res://audio/slime_three.wav" id="9_f88ks"]
+[ext_resource type="AudioStream" uid="uid://dpkh0n6isye1j" path="res://audio/slime_two.wav" id="10_jp7lr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbexq"]
 radius = 40.4475
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1kplh"]
+playback_mode = 1
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 8
+stream_0/stream = ExtResource("3_7s8gy")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_dsmfp")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_a2gf7")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_pljxd")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_5woqi")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("8_ftle0")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("9_f88ks")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("10_jp7lr")
+stream_7/weight = 1.0
 
 [node name="MarmeladeSegment" type="RigidBody2D"]
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_dwth4")
+marmelade_color = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_krc6k")
-animation = &"Idle"
+animation = &""
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -61,5 +73,9 @@ script = ExtResource("3_f17m7")
 
 [node name="RaycastTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_1kplh")
+bus = &"SFX"
 
 [connection signal="timeout" from="RaycastTimer" to="." method="raycast_timer_timeout"]

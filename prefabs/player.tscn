@@ -1,12 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://qjapx530ut32"]
+[gd_scene load_steps=7 format=3 uid="uid://qjapx530ut32"]
 
 [ext_resource type="PackedScene" uid="uid://d3mb57w65turn" path="res://prefabs/marmelade_segment.tscn" id="1_3id8p"]
 [ext_resource type="PackedScene" uid="uid://f13bdx3k4gmk" path="res://prefabs/playable_segment.tscn" id="2_ijetc"]
+[ext_resource type="Texture2D" uid="uid://bji7h7fqu4gri" path="res://sprites/final_part_falling.png" id="3_fk4nw"]
+[ext_resource type="Texture2D" uid="uid://d0bdoeoi45ajl" path="res://sprites/final_part_idle.png" id="4_kir4l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7hme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fk4nw")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kir4l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2xqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fk4nw")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kir4l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Player" type="Node2D"]
 
 [node name="MarmeladeSegment2" parent="." instance=ExtResource("1_3id8p")]
 position = Vector2(-65, 0)
+marmelade_color = Color(1, 0.745098, 0.705882, 1)
+
+[node name="Sprite2D" parent="MarmeladeSegment2" index="0"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_w7hme")
+animation = &"Idle"
+flip_h = true
 
 [node name="PinJoint2D2" parent="MarmeladeSegment2" index="2"]
 node_a = NodePath("../../PlayebleSegment")
@@ -16,15 +63,27 @@ node_b = NodePath("..")
 max_contacts_reported = 0
 contact_monitor = false
 joint_segments = [NodePath("../MarmeladeSegment2"), NodePath("."), NodePath("../MarmeladeSegment")]
+marmelade_color = Color(0.611765, 0.741176, 1, 1)
 
 [node name="PinJoint2D2" parent="PlayebleSegment" index="2"]
 node_a = NodePath("..")
 node_b = NodePath("../../MarmeladeSegment")
 
+[node name="AudioStreamPlayer" parent="PlayebleSegment" index="9"]
+stream = null
+bus = &"Master"
+
 [node name="MarmeladeSegment" parent="." instance=ExtResource("1_3id8p")]
 position = Vector2(65, 0)
+marmelade_color = Color(0.643137, 1, 0.615686, 1)
+
+[node name="Sprite2D" parent="MarmeladeSegment" index="0"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_a2xqn")
+animation = &"Idle"
 
 [connection signal="body_entered" from="PlayebleSegment" to="PlayebleSegment" method="wall_entered"]
 
 [editable path="MarmeladeSegment2"]
 [editable path="PlayebleSegment"]
+[editable path="MarmeladeSegment"]
