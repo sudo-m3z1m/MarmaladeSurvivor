@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://prefabs/saw.gd" id="1_ylmnc"]
 [ext_resource type="Texture2D" uid="uid://dw11he1lh17b2" path="res://sprites/Piston.png" id="2_ehxdj"]
 [ext_resource type="Texture2D" uid="uid://ctjviq1h70qcn" path="res://sprites/saw.png" id="2_s03vp"]
-[ext_resource type="AudioStream" uid="uid://e0m56ii3l0pg" path="res://audio/circular-saw-three.wav" id="4_8t84f"]
-[ext_resource type="AudioStream" uid="uid://st38vfl7qayq" path="res://audio/circular-saw.wav" id="4_ylv1d"]
-[ext_resource type="AudioStream" uid="uid://qadwdddjlygu" path="res://audio/circular-saw_two.wav" id="6_fa75k"]
+[ext_resource type="AudioStream" uid="uid://cur355irtn1af" path="res://audio/circular_saw_one.wav" id="4_rssrk"]
+[ext_resource type="AudioStream" uid="uid://bem2as2feftvn" path="res://audio/circular_saw_two.wav" id="5_ukwls"]
+[ext_resource type="AudioStream" uid="uid://cd0q7coibw3o7" path="res://audio/circular_saw_three.wav" id="6_mi636"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_im3lv"]
 atlas = ExtResource("2_ehxdj")
@@ -116,11 +116,11 @@ playback_mode = 1
 random_pitch = 1.1
 random_volume_offset_db = 2.0
 streams_count = 3
-stream_0/stream = ExtResource("4_8t84f")
+stream_0/stream = ExtResource("4_rssrk")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("4_ylv1d")
+stream_1/stream = ExtResource("5_ukwls")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("6_fa75k")
+stream_2/stream = ExtResource("6_mi636")
 stream_2/weight = 1.0
 
 [node name="Saw" type="Node2D"]
@@ -153,6 +153,7 @@ autoplay = "Attack"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qlbus")
+volume_db = 15.0
 autoplay = true
 max_distance = 400.0
 bus = &"SFX"
