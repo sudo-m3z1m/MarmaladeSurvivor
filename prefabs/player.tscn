@@ -59,10 +59,10 @@ flip_h = true
 node_a = NodePath("../../PlayebleSegment")
 node_b = NodePath("..")
 
-[node name="PlayebleSegment" parent="." node_paths=PackedStringArray("joint_segments") instance=ExtResource("2_ijetc")]
+[node name="PlayebleSegment" parent="." instance=ExtResource("2_ijetc")]
 max_contacts_reported = 0
 contact_monitor = false
-joint_segments = [NodePath("../MarmeladeSegment2"), NodePath("."), NodePath("../MarmeladeSegment")]
+default_force = 250.0
 marmelade_color = Color(0.611765, 0.741176, 1, 1)
 
 [node name="PinJoint2D2" parent="PlayebleSegment" index="2"]

@@ -10,7 +10,7 @@ class_name MarmeladeSegment
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
-	modulate = marmelade_color
+	set_modulate(marmelade_color)
 
 func raycast_timer_timeout() -> void:
 	set_raycasts_enabled(true)

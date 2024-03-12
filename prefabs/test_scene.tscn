@@ -49,3 +49,4 @@ polygon = PackedVector2Array(207, 352, 198, -75, 51, -234, -98, -278, -247, -215
 
 [node name="Saw" parent="." instance=ExtResource("3_qvomg")]
 position = Vector2(286, 145)
+rotation = 1.5708
