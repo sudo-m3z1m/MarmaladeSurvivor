@@ -2,10 +2,12 @@ extends Node
 
 class_name SegmentStateMachine
 
+@export var state_paths: Array[String]
+
 @onready var target: MarmeladeSegment = get_parent()
 @onready var states: Dictionary = {
-	STATES.IDLE : preload("res://prefabs/SegmentsStates/idle.gd").new(target),
-	STATES.FALLING : preload("res://prefabs/SegmentsStates/falling.gd").new(target)
+	STATES.IDLE : load(state_paths[0]).new(target),
+	STATES.FALLING : load(state_paths[1]).new(target)
 }
 @onready var current_state: State = states[STATES.IDLE]
 

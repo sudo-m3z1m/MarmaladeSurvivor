@@ -9,6 +9,7 @@ class_name Player
 @onready var line: Line2D = $Line
 @onready var raycast_array: Array[RayCast2D] = [$RayCast, $RayCast2]
 
+var jumps_count: int
 var joint_segments: Array[MarmeladeSegment]
 
 func _ready() -> void:
@@ -24,6 +25,9 @@ func _unhandled_input(event) -> void:
 		set_falling_segments()
 		throw_player()
 		line.points[1] = Vector2.ZERO
+	if event.is_action_pressed("Escape"):
+		Menu.visible = true
+		get_tree().paused = true
 
 func is_segments_idle() -> bool:
 	for segment in joint_segments:

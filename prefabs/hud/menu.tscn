@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3 uid="uid://s4v5w8wtvhx3"]
+
+[ext_resource type="Script" path="res://prefabs/hud/menu.gd" id="1_d2jc6"]
+[ext_resource type="PackedScene" uid="uid://b2xhvekqypdnn" path="res://prefabs/test_scene.tscn" id="2_kaqt8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw1uo"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqgba"]
+content_margin_left = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnc5x"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hsgg"]
+content_margin_left = 15.0
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_d2jc6")
+exit_menu_packed = ExtResource("2_kaqt8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuPanel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hw1uo")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 30
+
+[node name="MenuLabel" type="Label" parent="MarginContainer/MenuPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MenuPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 15
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/MenuPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqgba")
+text = "Continue"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/MenuPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqgba")
+text = "Settings"
+flat = true
+
+[node name="ExitButton" type="Button" parent="MarginContainer/MenuPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqgba")
+text = "Exit
+"
+flat = true
+
+[node name="SettingsPanel" type="Panel" parent="MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mnc5x")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/SettingsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer/SettingsPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/SettingsPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="Music" type="Label" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 110
+
+[node name="Sounds" type="Label" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Sounds"
+
+[node name="SoundsSlider" type="HSlider" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 170
+
+[node name="Fullscreen" type="Label" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="ScreenCheckButton" type="CheckButton" parent="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+
+[node name="OKButton" type="Button" parent="MarginContainer/SettingsPanel/MarginContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hsgg")
+text = "OK"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/MenuPanel/MarginContainer/VBoxContainer/ContinueButton" to="." method="continue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuPanel/MarginContainer/VBoxContainer/SettingsButton" to="." method="settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MenuPanel/MarginContainer/VBoxContainer/ExitButton" to="." method="exit_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer/MusicSlider" to="." method="music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer2/SoundsSlider" to="." method="sounds_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/SettingsPanel/MarginContainer/VBoxContainer/HBoxContainer4/ScreenCheckButton" to="." method="screen_check_button_pressed"]
+[connection signal="pressed" from="MarginContainer/SettingsPanel/MarginContainer/OKButton" to="." method="settings_button_pressed"]

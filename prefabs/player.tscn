@@ -46,13 +46,13 @@ animations = [{
 [node name="Player" type="Node2D"]
 
 [node name="MarmeladeSegment2" parent="." instance=ExtResource("1_3id8p")]
-position = Vector2(-65, 0)
+position = Vector2(-55, 0)
 marmelade_color = Color(1, 0.745098, 0.705882, 1)
 
 [node name="Sprite2D" parent="MarmeladeSegment2" index="0"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_w7hme")
-animation = &"Idle"
+animation = &"Falling"
 flip_h = true
 
 [node name="PinJoint2D2" parent="MarmeladeSegment2" index="2"]
@@ -74,13 +74,13 @@ stream = null
 bus = &"Master"
 
 [node name="MarmeladeSegment" parent="." instance=ExtResource("1_3id8p")]
-position = Vector2(65, 0)
+position = Vector2(52, 0)
 marmelade_color = Color(0.643137, 1, 0.615686, 1)
 
 [node name="Sprite2D" parent="MarmeladeSegment" index="0"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_a2xqn")
-animation = &"Idle"
+animation = &"Falling"
 
 [connection signal="body_entered" from="PlayebleSegment" to="PlayebleSegment" method="wall_entered"]
 

@@ -1,0 +1,403 @@
+[gd_scene load_steps=19 format=3 uid="uid://dc1uh8r5to8hh"]
+
+[ext_resource type="PackedScene" uid="uid://qjapx530ut32" path="res://prefabs/player.tscn" id="1_28myq"]
+[ext_resource type="Script" path="res://prefabs/main_scene.gd" id="1_vgcug"]
+[ext_resource type="Texture2D" uid="uid://bi4k43udu7sb0" path="res://sprites/light_conus.png" id="2_3mf3u"]
+[ext_resource type="Texture2D" uid="uid://bvw5xnq464cpe" path="res://sprites/factory_texture.png" id="2_8pfqi"]
+[ext_resource type="PackedScene" uid="uid://bnf4i3v74a4h" path="res://prefabs/saw.tscn" id="2_l3vk3"]
+[ext_resource type="Script" path="res://prefabs/apearing_label.gd" id="6_x0afc"]
+
+[sub_resource type="Gradient" id="Gradient_ob3tg"]
+offsets = PackedFloat32Array(0, 0.116883, 0.324675, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.278431, 0.65098, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tk5je"]
+gradient = SubResource("Gradient_ob3tg")
+fill_from = Vector2(0, 0.577982)
+fill_to = Vector2(1, 0.568807)
+repeat = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0pqg6"]
+polygon = PackedVector2Array(-1298, 15316, -875, 15391, -280, 15346, 249, 15407, 1544, 15644, 1951, 15966, 3080, 16116, 4460, 16102, 5350, 16161, 5850, 16254, 5901, 16551, 5926, 16916, 5367, 17077, 4595, 17068, 3468, 17000, 2121, 16966, 858, 16712, -473, 16382, -1083, 16195, -1660, 16110, -2338, 16068, -2168, 15593)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1yl87"]
+polygon = PackedVector2Array(5916, 16904, 6967, 16947, 7162, 16472, 7162, 15209, 6823, 14336, 6510, 13989, 6145, 14031, 5755, 14260, 5704, 14692, 5857, 15141, 5942, 15480, 5789, 15811, 5823, 16057, 5849, 16252)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cxf4t"]
+polygon = PackedVector2Array(4416, 13362, 4187, 13624, 4272, 14184, 4247, 14675, 4136, 15141, 4387, 15308, 4594, 15266, 4704, 15023, 4713, 14557, 4874, 14260, 5086, 14040, 5213, 13819, 5484, 13641, 5433, 13141)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3ifpi"]
+polygon = PackedVector2Array(3298, 13568, 3950, 13888, 3907, 14518, 3941, 14786, 3768, 15095, 3693, 15533, 3768, 15949, 3928, 16451, 4195, 16643, 4342, 16393, 4285, 16152, 4190, 15771, 4215, 15269, 4361, 14723, 4418, 14158, 4609, 13879, 4979, 13754, 4741, 13535, 4479, 13140, 5450, 13212, 5862, 13643, 6192, 13728, 6630, 13728, 7068, 13728, 7345, 14230, 7474, 15234, 7410, 16035, 7559, 17092, 6683, 17722, 5626, 17658, 4857, 17658, 4185, 17594, 3597, 17594, 2999, 17455, 2807, 16494, 1408, 15771, 1594, 15058, 1474, 13589)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q1cqv"]
+polygon = PackedVector2Array(1225, 15954, 980, 16125, 819, 16056, 771, 15864, 825, 15671, 1014, 15519, 1321, 15442, 1578, 15431, 1791, 15495, 1743, 15666, 1487, 15821, 1578, 15912, 1498, 15981, 1359, 16002)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jpxhm"]
+polygon = PackedVector2Array(7926, 15958, 8400, 15274, 8990, 15274, 9258, 15806, 8610, 16148, 8400, 16358, 8020, 16244)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2uabd"]
+polygon = PackedVector2Array(9396, 14508, 9724, 14096, 10324, 14224, 10522, 14580, 10522, 14880, 9896, 14908, 9368, 14708)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_prd74"]
+polygon = PackedVector2Array(10652, 16804, 11036, 16106, 11778, 15992, 11778, 16590, 12034, 17146, 11322, 17316, 10580, 17246)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5k6x4"]
+polygon = PackedVector2Array(9918, 15464, 10788, 15894, 11192, 16154, 11696, 16748, 12208, 17124, 13194, 17124, 13914, 17026, 14910, 17080, 15422, 17348, 15466, 18238, 14848, 18678, 12962, 19002, 10986, 18894, 10078, 18768, 9990, 17762, 9936, 16630)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_868tp"]
+size = Vector2(346, 304)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_vgcug")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2743.0
+offset_top = -664.0
+offset_right = 59795.0
+offset_bottom = 18409.0
+texture = SubResource("GradientTexture2D_tk5je")
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+position = Vector2(4365, 13511)
+rotation = -0.819294
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.1
+texture = ExtResource("2_3mf3u")
+offset = Vector2(0, 700)
+texture_scale = 5.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light"]
+position = Vector2(1216, 13664)
+rotation = 0.718587
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.1
+texture = ExtResource("2_3mf3u")
+offset = Vector2(0, 700)
+texture_scale = 5.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light"]
+position = Vector2(2890, 13692)
+rotation = -0.0909345
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.1
+texture = ExtResource("2_3mf3u")
+offset = Vector2(0, 700)
+texture_scale = 5.0
+
+[node name="PointLight2D5" type="PointLight2D" parent="Light"]
+position = Vector2(10292, 13842)
+rotation = 0.696503
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.1
+texture = ExtResource("2_3mf3u")
+offset = Vector2(0, 700)
+texture_scale = 6.0
+
+[node name="PointLight2D6" type="PointLight2D" parent="Light"]
+position = Vector2(12605, 12372)
+rotation = -0.367487
+scale = Vector2(3, 3)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.1
+texture = ExtResource("2_3mf3u")
+offset = Vector2(0, 700)
+texture_scale = 5.0
+
+[node name="Saw" parent="." instance=ExtResource("2_l3vk3")]
+position = Vector2(5316, 14565)
+
+[node name="Saw2" parent="." instance=ExtResource("2_l3vk3")]
+position = Vector2(13773, 14367)
+rotation = 3.14159
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
+position = Vector2(-589, -233)
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D"]
+polygon = PackedVector2Array(934, -31, 778, 448, 765, 778, 723, 1083, 680, 1350, 820, 1477, 731, 1672, 727, 2028, 663, 2308, 723, 2571, 689, 2778, 642, 2961, 676, 3206, 570, 3423, 731, 3575, 612, 3795, 756, 4037, 604, 4185, 663, 4380, 706, 4579, 693, 4872, 672, 5101, 795, 5338, 701, 5533, 680, 5648, 612, 5821, 718, 5919, 824, 6173, 803, 6385, 718, 6554, 642, 6770, 752, 6898, 765, 7118, 713, 7238, 739, 7423, 884, 7626, 905, 7813, 832, 7956, 821, 8118, 850, 8224, 905, 8491, 765, 8648, 768, 8828, 797, 9020, 934, 9199, 882, 9361, 870, 9500, 900, 9607, 870, 9709, 782, 9885, 816, 10079, 769, 10262, 828, 10373, 812, 10606, 773, 10873, 778, 10953, 891, 11135, 875, 11360, 756, 11580, 803, 11818, 905, 11987, 836, 12147, 870, 12283, 765, 12517, 782, 12788, 782, 12962, 765, 13225, 765, 13360, 765, 13487, 1864, 13450, 11368, 13230, 7748, 2414, 5802, -483)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(934, -31, 778, 448, 765, 778, 723, 1083, 680, 1350, 820, 1477, 731, 1672, 727, 2028, 663, 2308, 723, 2571, 689, 2778, 642, 2961, 676, 3206, 570, 3423, 731, 3575, 612, 3795, 756, 4037, 604, 4185, 663, 4380, 706, 4579, 693, 4872, 672, 5101, 795, 5338, 701, 5533, 680, 5648, 612, 5821, 718, 5919, 824, 6173, 803, 6385, 718, 6554, 642, 6770, 752, 6898, 765, 7118, 713, 7238, 739, 7423, 884, 7626, 905, 7813, 832, 7956, 821, 8118, 850, 8224, 905, 8491, 765, 8648, 768, 8828, 797, 9020, 934, 9199, 882, 9361, 870, 9500, 900, 9607, 870, 9709, 782, 9885, 816, 10079, 769, 10262, 828, 10373, 812, 10606, 773, 10873, 778, 10953, 891, 11135, 875, 11360, 756, 11580, 803, 11818, 905, 11987, 836, 12147, 870, 12283, 765, 12517, 782, 12788, 782, 12962, 765, 13225, 765, 13360, 765, 13487, 1864, 13450, 11368, 13230, 7748, 2414, 5802, -483)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Terrain"]
+position = Vector2(650, -251)
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D2"]
+polygon = PackedVector2Array(-944, 43, -923, 218, -937, 328, -915, 434, -912, 535, -962, 649, -880, 751, -917, 801, -892, 906, -935, 970, -976, 1093, -887, 1143, -962, 1248, -955, 1323, -882, 1435, -923, 1528, -967, 1627, -848, 1725, -971, 1804, -1003, 1900, -883, 1918, -924, 2091, -960, 2197, -953, 2320, -985, 2365, -953, 2442, -955, 2520, -1013, 2616, -989, 2700, -901, 2744, -903, 2878, -932, 2953, -981, 3033, -912, 3136, -919, 3192, -1005, 3293, -967, 3382, -915, 3463, -857, 3623, -905, 3703, -953, 3773, -873, 3876, -964, 3983, -962, 4043, -899, 4102, -864, 4229, -882, 4327, -965, 4386, -928, 4492, -903, 4589, -973, 4672, -928, 4749, -889, 4931, -910, 5068, -971, 5186, -846, 5237, -930, 5328, -869, 5499, -883, 5585, -926, 5677, -942, 5725, -903, 5791, -908, 5879, -851, 5962, -973, 6060, -905, 6109, -901, 6148, -956, 6429, -1035, 6529, -1079, 6705, -1062, 6795, -1037, 6921, -1038, 7051, -974, 7122, -939, 7208, -932, 7301, -958, 7418, -1024, 7477, -1056, 7648, -1069, 7753, -1060, 7896, -1035, 8010, -999, 8095, -1028, 8268, -990, 8421, -942, 8500, -1013, 8660, -1056, 8751, -992, 8929, -958, 9002, -994, 9157, -1062, 9264, -1088, 9385, -951, 9514, -944, 9669, -1013, 9802, -1088, 9920, -1083, 10059, -946, 10130, -969, 10223, -1017, 10314, -1058, 10431, -1078, 10545, -949, 10609, -949, 10723, -992, 10850, -1054, 10985, -1095, 11121, -1015, 11196, -955, 11338, -1021, 11531, -1078, 11650, -1042, 11759, -1010, 11849, -933, 12256, -1003, 12307, -1001, 12411, -896, 12833, -971, 12974, -1069, 13123, -1067, 13259, -940, 13311, -946, 13446, -951, 13581, -997, 13642, -1234, 13613, -8592, 11811, -10029, 5094, -6509, 66, -3384, -2341, -3264, 91)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D2"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(-944, 43, -923, 218, -937, 328, -915, 434, -912, 535, -962, 649, -880, 751, -917, 801, -892, 906, -935, 970, -976, 1093, -887, 1143, -962, 1248, -955, 1323, -882, 1435, -923, 1528, -967, 1627, -848, 1725, -971, 1804, -1003, 1900, -883, 1918, -924, 2091, -960, 2197, -953, 2320, -985, 2365, -953, 2442, -955, 2520, -1013, 2616, -989, 2700, -901, 2744, -903, 2878, -932, 2953, -981, 3033, -912, 3136, -919, 3192, -1005, 3293, -967, 3382, -915, 3463, -857, 3623, -905, 3703, -953, 3773, -873, 3876, -964, 3983, -962, 4043, -899, 4102, -864, 4229, -882, 4327, -965, 4386, -928, 4492, -903, 4589, -973, 4672, -928, 4749, -889, 4931, -910, 5068, -971, 5186, -846, 5237, -930, 5328, -869, 5499, -883, 5585, -926, 5677, -942, 5725, -903, 5791, -908, 5879, -851, 5962, -973, 6060, -905, 6109, -901, 6148, -956, 6429, -1035, 6529, -1079, 6705, -1062, 6795, -1037, 6921, -1038, 7051, -974, 7122, -939, 7208, -932, 7301, -958, 7418, -1024, 7477, -1056, 7648, -1069, 7753, -1060, 7896, -1035, 8010, -999, 8095, -1028, 8268, -990, 8421, -942, 8500, -1013, 8660, -1056, 8751, -992, 8929, -958, 9002, -994, 9157, -1062, 9264, -1088, 9385, -951, 9514, -944, 9669, -1013, 9802, -1088, 9920, -1083, 10059, -946, 10130, -969, 10223, -1017, 10314, -1058, 10431, -1078, 10545, -949, 10609, -949, 10723, -992, 10850, -1054, 10985, -1095, 11121, -1015, 11196, -955, 11338, -1021, 11531, -1078, 11650, -1042, 11759, -1010, 11849, -933, 12256, -1003, 12307, -1001, 12411, -896, 12833, -971, 12974, -1069, 13123, -1067, 13259, -940, 13311, -946, 13446, -951, 13581, -997, 13642, -1234, 13613, -8592, 11811, -10029, 5094, -6509, 66, -3384, -2341, -3264, 91)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Terrain"]
+position = Vector2(650, -251)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D3"]
+polygon = PackedVector2Array(-956, 13563, -1036, 13921, -1233, 14161, -1271, 14364, -1281, 14615, -1239, 14871, -1239, 15122, -1292, 15314, -1474, 15416, -1778, 15560, -2127, 15830, -2889, 15881, -3993, 15881, -5085, 15766, -5657, 15512, -9911, 14687, -10749, 13125, -10216, 11944, -9035, 11449, -7778, 11461, -5670, 11868, -4146, 12452, -2787, 12947, -2050, 13277, -1454, 13506)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D3"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(-956, 13563, -1036, 13921, -1233, 14161, -1271, 14364, -1281, 14615, -1239, 14871, -1239, 15122, -1292, 15314, -1474, 15416, -1778, 15560, -2127, 15830, -2889, 15881, -3993, 15881, -5085, 15766, -5657, 15512, -9911, 14687, -10749, 13125, -10216, 11944, -9035, 11449, -7778, 11461, -5670, 11868, -4146, 12452, -2787, 12947, -2050, 13277, -1454, 13506)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Terrain"]
+position = Vector2(583, -1449)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D4"]
+polygon = PackedVector2Array(-1298, 15316, -875, 15391, -280, 15346, 249, 15407, 1544, 15644, 1951, 15966, 3104, 16119, 4460, 16102, 5350, 16161, 5850, 16254, 5901, 16551, 5926, 16916, 5367, 17077, 4595, 17068, 3468, 17000, 2121, 16966, 858, 16712, -473, 16382, -1083, 16195, -1660, 16110, -2338, 16068, -2168, 15593)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D4"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(-1298, 15316, -875, 15391, -280, 15346, 249, 15407, 1544, 15644, 1951, 15966, 3104, 16119, 4460, 16102, 5350, 16161, 5850, 16254, 5901, 16551, 5926, 16916, 5367, 17077, 4595, 17068, 3468, 17000, 2121, 16966, 858, 16712, -473, 16382, -1083, 16195, -1660, 16110, -2338, 16068, -2168, 15593)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D4"]
+occluder = SubResource("OccluderPolygon2D_0pqg6")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Terrain"]
+position = Vector2(650, -251)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D7"]
+polygon = PackedVector2Array(-474, 13441, -494, 13673, -290, 13761, -54, 13773, 174, 13677, 650, 13705, 1194, 13873, 1950, 14005, 2222, 13857, 2498, 13889, 2719, 14016, 3221, 13962, 3284, 13746, 3724, 13621, 4191, 13549, 4541, 13648, 5454, 13582, 5561, 13561, 5867, 13504, 6209, 13511, 6651, 13518, 7200, 13575, 7528, 13625, 7913, 13732, 8077, 13653, 8440, 13696, 8811, 13753, 9181, 13632, 9523, 13561, 9873, 13575, 9994, 13404, 10136, 13226, 9139, 13083, 7528, 12841, 5432, 12770, 4000, 12848, 158, 13147)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D7"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(-474, 13441, -494, 13673, -290, 13761, -54, 13773, 174, 13677, 650, 13705, 1194, 13873, 1950, 14005, 2222, 13857, 2498, 13889, 2719, 14016, 3221, 13962, 3284, 13746, 3724, 13621, 4191, 13549, 4541, 13648, 5454, 13582, 5561, 13561, 5867, 13504, 6209, 13511, 6651, 13518, 7200, 13575, 7528, 13625, 7655, 13659, 7779, 13694, 7913, 13732, 8077, 13653, 8440, 13696, 8811, 13753, 9181, 13632, 9523, 13561, 9873, 13575, 9994, 13404, 10136, 13226, 9139, 13083, 7528, 12841, 5432, 12770, 4000, 12848, 158, 13147)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Terrain"]
+position = Vector2(192, -258)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D5"]
+polygon = PackedVector2Array(5916, 16904, 6967, 16947, 7162, 16472, 7162, 15209, 6823, 14336, 6510, 13989, 6145, 14031, 5755, 14260, 5704, 14692, 5857, 15141, 5942, 15480, 5789, 15811, 5823, 16057, 5849, 16252)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D5"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(5916, 16904, 6967, 16947, 7162, 16472, 7162, 15209, 6823, 14336, 6510, 13989, 6145, 14031, 5755, 14260, 5704, 14692, 5857, 15141, 5942, 15480, 5789, 15811, 5823, 16057, 5849, 16252)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D5"]
+occluder = SubResource("OccluderPolygon2D_1yl87")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Terrain"]
+position = Vector2(933, -1058)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D6"]
+polygon = PackedVector2Array(4416, 13362, 4187, 13624, 4272, 14184, 4247, 14675, 4136, 15141, 4387, 15308, 4594, 15266, 4704, 15023, 4713, 14557, 4874, 14260, 5086, 14040, 5213, 13819, 5484, 13641, 5433, 13141)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D6"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(4416, 13362, 4187, 13624, 4272, 14184, 4247, 14675, 4136, 15141, 4387, 15308, 4594, 15266, 4704, 15023, 4713, 14557, 4874, 14260, 5086, 14040, 5213, 13819, 5484, 13641, 5433, 13141)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D6"]
+occluder = SubResource("OccluderPolygon2D_cxf4t")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Terrain"]
+position = Vector2(5623, 1123)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D8"]
+polygon = PackedVector2Array(3298, 13568, 3950, 13888, 3907, 14518, 3941, 14786, 3768, 15095, 3693, 15533, 3768, 15949, 3928, 16451, 4195, 16643, 4342, 16393, 4285, 16152, 4190, 15771, 4215, 15269, 4361, 14723, 4418, 14158, 4609, 13879, 4979, 13754, 4741, 13535, 4479, 13140, 5450, 13212, 5862, 13643, 6192, 13728, 6630, 13728, 7068, 13728, 7345, 14230, 7474, 15234, 7410, 16035, 7559, 17092, 6683, 17722, 5626, 17658, 4857, 17658, 4185, 17594, 3597, 17594, 2999, 17455, 2807, 16494, 1408, 15771, 1594, 15058, 1474, 13589)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D8"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(3298, 13568, 3950, 13888, 3907, 14518, 3941, 14786, 3768, 15095, 3693, 15533, 3768, 15949, 3928, 16451, 4195, 16643, 4342, 16393, 4285, 16152, 4190, 15771, 4215, 15269, 4361, 14723, 4418, 14158, 4609, 13879, 4979, 13754, 4741, 13535, 4479, 13140, 5450, 13212, 5862, 13643, 6192, 13728, 6630, 13728, 7068, 13728, 7345, 14230, 7474, 15234, 7410, 16035, 7559, 17092, 6683, 17722, 5626, 17658, 4857, 17658, 4185, 17594, 3597, 17594, 2999, 17455, 2807, 16494, 1408, 15771, 1594, 15058, 1474, 13589)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D8"]
+occluder = SubResource("OccluderPolygon2D_3ifpi")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Terrain"]
+position = Vector2(9039, 6652)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D9"]
+polygon = PackedVector2Array(1225, 15954, 980, 16125, 819, 16056, 771, 15864, 825, 15671, 1014, 15519, 1321, 15442, 1578, 15431, 1791, 15495, 1743, 15666, 1487, 15821, 1578, 15912, 1498, 15981, 1359, 16002)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D9"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(1225, 15954, 980, 16125, 819, 16056, 771, 15864, 825, 15671, 1014, 15519, 1321, 15442, 1578, 15431, 1791, 15495, 1743, 15666, 1487, 15821, 1578, 15912, 1498, 15981, 1359, 16002)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D9"]
+occluder = SubResource("OccluderPolygon2D_q1cqv")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Terrain"]
+position = Vector2(9039, 6652)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D10"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D10"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D10"]
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Terrain"]
+position = Vector2(8906, 6728)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D11"]
+polygon = PackedVector2Array(7926, 15958, 8400, 15274, 8990, 15274, 9258, 15806, 8610, 16148, 8400, 16358, 8020, 16244)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D11"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(7926, 15958, 8400, 15274, 8990, 15274, 9258, 15806, 8610, 16148, 8400, 16358, 8020, 16244)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D11"]
+occluder = SubResource("OccluderPolygon2D_jpxhm")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Terrain"]
+position = Vector2(8906, 6728)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D12"]
+polygon = PackedVector2Array(9396, 14508, 9724, 14096, 10324, 14224, 10522, 14580, 10522, 14880, 9896, 14908, 9368, 14708)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D12"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(9396, 14508, 9724, 14096, 10324, 14224, 10522, 14580, 10522, 14880, 9896, 14908, 9368, 14708)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D12"]
+rotation = -0.000213856
+occluder = SubResource("OccluderPolygon2D_2uabd")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Terrain"]
+position = Vector2(8634, 6256)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D13"]
+polygon = PackedVector2Array(10652, 16804, 11036, 16106, 11778, 15992, 11778, 16590, 12034, 17146, 11322, 17316, 10580, 17246)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D13"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(10652, 16804, 11036, 16106, 11778, 15992, 11778, 16590, 12034, 17146, 11322, 17316, 10580, 17246)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D13"]
+occluder = SubResource("OccluderPolygon2D_prd74")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Terrain"]
+position = Vector2(7984, 7604)
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/StaticBody2D14"]
+polygon = PackedVector2Array(9918, 15464, 10788, 15894, 11192, 16154, 11696, 16748, 12208, 17124, 13194, 17124, 13914, 17026, 14910, 17080, 15422, 17348, 15466, 18238, 14848, 18678, 12962, 19002, 10986, 18894, 10078, 18768, 9990, 17762, 9936, 16630)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/StaticBody2D14"]
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("2_8pfqi")
+texture_rotation = 0.523599
+polygon = PackedVector2Array(9918, 15464, 10788, 15894, 11192, 16154, 11696, 16748, 12208, 17124, 13194, 17124, 13914, 17026, 14910, 17080, 15422, 17348, 15466, 18238, 14848, 18678, 12962, 19002, 10986, 18894, 10078, 18768, 9990, 17762, 9936, 16630)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Terrain/StaticBody2D14"]
+occluder = SubResource("OccluderPolygon2D_5k6x4")
+
+[node name="Player" parent="." instance=ExtResource("1_28myq")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 966.0
+offset_top = 13825.0
+offset_right = 1274.0
+offset_bottom = 13874.0
+theme_override_font_sizes/font_size = 20
+text = "Left mouse + mouse direction for jumps
+and A and D for rotating"
+horizontal_alignment = 1
+script = ExtResource("6_x0afc")
+
+[node name="Area2D" type="Area2D" parent="Label"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/Area2D"]
+position = Vector2(163, 35)
+shape = SubResource("RectangleShape2D_868tp")
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 2912.0
+offset_top = 14432.0
+offset_right = 3241.0
+offset_bottom = 14481.0
+rotation = 0.105675
+theme_override_font_sizes/font_size = 20
+text = "But you already knew that isn't it?"
+horizontal_alignment = 1
+script = ExtResource("6_x0afc")
+
+[node name="Area2D" type="Area2D" parent="Label2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label2/Area2D"]
+position = Vector2(163, 35)
+shape = SubResource("RectangleShape2D_868tp")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://f13bdx3k4gmk"]
+[gd_scene load_steps=8 format=3 uid="uid://f13bdx3k4gmk"]
 
 [ext_resource type="PackedScene" uid="uid://d3mb57w65turn" path="res://prefabs/marmelade_segment.tscn" id="1_1khgk"]
 [ext_resource type="Script" path="res://prefabs/player.gd" id="2_q53dr"]
 [ext_resource type="Texture2D" uid="uid://tcgxs1hfyty3" path="res://sprites/middle_part_falling.png" id="3_7141e"]
 [ext_resource type="Texture2D" uid="uid://cuxsjmakosa5e" path="res://sprites/middle_part_idle.png" id="4_1mphg"]
+[ext_resource type="Texture2D" uid="uid://dsr8ktam3kfe0" path="res://sprites/target_prajectory.png" id="5_grmgb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctda2"]
 animations = [{
@@ -25,19 +26,19 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_6cx58"]
-offsets = PackedFloat32Array(0, 0.513333, 1)
-colors = PackedColorArray(0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.493333, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1)
 
 [node name="PlayableSegment" instance=ExtResource("1_1khgk")]
 script = ExtResource("2_q53dr")
 max_point_range = 300.0
-default_force = 350.0
+default_force = 300.0
 rotate_force = 100000.0
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ctda2")
-animation = &"Idle"
+animation = &"Falling"
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 drag_horizontal_enabled = true
@@ -49,5 +50,9 @@ drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 
 [node name="Line" type="Line2D" parent="." index="6"]
+texture_filter = 1
 points = PackedVector2Array(0, 0, 0, 0)
+width = 100.0
 gradient = SubResource("Gradient_6cx58")
+texture = ExtResource("5_grmgb")
+texture_mode = 1
