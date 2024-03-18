@@ -32,7 +32,7 @@ colors = PackedColorArray(1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1)
 [node name="PlayableSegment" instance=ExtResource("1_1khgk")]
 script = ExtResource("2_q53dr")
 max_point_range = 300.0
-default_force = 300.0
+default_force = 500.0
 rotate_force = 100000.0
 
 [node name="Sprite2D" parent="." index="0"]

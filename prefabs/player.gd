@@ -43,9 +43,9 @@ func set_falling_segments() -> void:
 func throw_player() -> void:
 	var throw_vector: Vector2
 	
-	throw_vector = get_global_mouse_position() - global_position
-	throw_vector.limit_length(max_point_range)
-	apply_central_force(throw_vector * default_force)
+	throw_vector = (get_global_mouse_position() - global_position).limit_length(max_point_range)
+	throw_vector *= default_force
+	apply_central_force(throw_vector)
 
 func get_segments() -> void:
 	for segment in get_parent().get_children():
